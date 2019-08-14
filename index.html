@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Twitch makes a gallery</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+		<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+		<!-- Jscripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/popper.min.js"></script>
+
+		<!-- Styling -->
+		<style>
+			html {
+				font-size: 13px;
+			}
+
+			body {
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 400;
+			}
+
+			p {
+				font-size: 1.2rem;
+			}
+
+			p.lead {
+				font-size: 1.4rem;
+			}
+
+			a:hover {
+				text-decoration: none;
+				color: white;
+				transition: all 0.2s ease;
+			}
+
+			.twitch {
+				width: 100%;
+				height: 400px;
+			}
+
+			.twitchchat {
+				width: 100%;
+				overflow: hidden;
+			}
+
+			.twitchchat iframe {
+				position: relative;
+				width: 100%;
+				height: 400px;
+				top: 0px;
+			}
+
+			.section-main {
+				position: relative;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.section-main>.sub-background {
+				width: 100%;
+				height: 100%;
+				background: url('bg.svg');
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				opacity: 0.2;
+				z-index: -1;
+			}
+
+			.sub-embed {
+				display: none;
+			}
+
+			.sub-embed .sub-twitch {
+				margin-bottom: 5em;
+			}
+
+			.sub-offline {
+				height: 50vh;
+				display: flex;
+				align-items: center;
+			}
+
+			.section-copy {
+				display: none;
+			}
+
+			.section-copy h2:after {
+				display: block;
+				height: 2px;
+				background-color: #00bc8c;
+				content: "";
+				width: 60px;
+				margin: 0 auto;
+				margin-top: 20px;
+				transition: all 0.5s ease-in-out 0s;
+			}
+
+			@media (max-width: 1024px) {
+				.section-main {
+					height: auto;
+				}
+
+			}
+		</style>
+	</head>
+
+	<body>
+		<section class="section-main">
+			<div class="sub-background"></div>
+			<div class="sub-hero">
+				<div class="sub-background"></div>
+				<div class="container text-center py-4">
+					<h1 class="display-5 mb-4">Twitch makes a gallery</h1>
+					<p class="lead">We're building a twitch.tv controlled photo frame in our office!</p>
+				</div>
+			</div>
+			<div class="sub-embed">
+				<div class="sub-background"></div>
+				<div class="container text-center py-5">
+					<div class="sub-twitch row">
+						<div class="col-sm-8">
+							<!-- <iframe class="twitch" id="twitch" src="https://player.twitch.tv/?channel=melondigital" allowfullscreen="true"></iframe> -->
+
+							<div class="twitch" id="twitch-embed"></div>
+						</div>
+						<div class="col-sm-4">
+							<div class="twitchchat"><iframe src="https://www.twitch.tv/embed/melondigital/chat" frameborder="0" scrolling="no" height="500" width="350"></iframe></div>
+						</div>
+					</div>
+					<br>
+					<h3 class="text-uppercase mb-4"><a class="text-body" href="https://www.twitch.tv/melondigital" target="_blank">We are <strong class="text-success">live now!</strong></a></h3>
+					<p>Watch us as we work on the project live!</p>
+				</div>
+			</div>
+			<div class="sub-offline">
+				<div class="container text-center">
+					<h3 class="text-uppercase mb-4">We're offline</h3>
+					<p>Check back to watch us as we work on the project live!</p>
+					<h4 class="text-uppercase mt-5"><a href="https://www.twitch.tv/melondigital" target="_blank"><strong>View us on Twitch</strong></a></h4>
+				</div>
+			</div>
+			<footer class="footer-main text-center lead mt-5">
+				Made with <svg style="position: relative; top: -2px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="tiny" id="Layer_1" x="0px" y="0px" width="20" height="20" viewBox="0 0 511.9 511.9" xml:space="preserve">
+					<path fill="#FF473E" d="M476.6,133c-53.7-63.5-148.7-66.5-206.3-9.1c-0.1,0.1-0.1,0.1-0.2,0.2c-8,8-20.5,8-28.4,0  c-0.1-0.1-0.1-0.1-0.2-0.2c-54.6-54.8-143.3-55-198.1-0.4C-3.2,169.8-10.9,244.6,25,299.7c11.2,17.3,25.3,30.6,40.9,40.7l180,145.7  c6.4,5.2,15.6,5.2,22.1,0l178.8-145.9c15-10,28.6-23,39.5-39.5C520.4,249.4,516.4,180,476.6,133z" />
+					<path fill="#FF6E83" d="M58.7,242.6c-0.6,0-1.3,0-1.9-0.1c-12.9-1.1-22.5-12.4-21.5-25.3c3.8-45.9,36.5-83.5,81.5-93.5  c12.6-2.8,25.2,5.1,28,17.8c2.8,12.6-5.1,25.2-17.8,28c-24.8,5.5-42.9,26.3-45,51.6C81,233.3,70.8,242.6,58.7,242.6z" />
+				</svg> by <a href="https://www.melonwebdesign.co.uk/"><strong class="font-weight-bold">Melon</strong></a>
+			</footer>
+		</section>
+		<script src="https://embed.twitch.tv/embed/v1.js"></script>
+		<script type="text/javascript">
+			var embed = new Twitch.Embed("twitch-embed", {
+				width: '100%',
+				height: '100%',
+				channel: "melondigital",
+				layout: "video",
+				autoplay: true
+			});
+			embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+				var player = embed.getPlayer();
+				player.play();
+			});
+			fetch('https://api.twitch.tv/kraken/streams?client_id=ooln3u3mzf2t2n5ksx2v04x1jmiqj6&channel=454382405')
+				.then(res => res.json())
+				.then((data) => {
+					if (data.streams && data.streams.length > 0) {
+						$('.sub-embed').show();
+						$('.sub-offline').hide();
+					}
+				})
+				.catch(err => { throw err });
+		</script>
+	</body>
+
+</html>
