@@ -1,0 +1,93 @@
+html {
+	font-size: 13px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+p.lead {
+	font-size: 1.4rem;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+	transition: all 0.2s ease;
+}
+
+.twitch {
+	width: 100%;
+	height: 400px;
+}
+
+.twitchchat {
+	width: 100%;
+	overflow: hidden;
+}
+
+.twitchchat iframe {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	top: 0px;
+}
+
+.section-main {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.section-main > .sub-background {
+	width: 100%;
+	height: 100%;
+	background: url("bg.svg");
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	opacity: 0.2;
+	z-index: -1;
+}
+
+.sub-embed {
+	display: none;
+}
+
+.sub-embed .sub-twitch {
+	margin-bottom: 5em;
+}
+
+.sub-offline {
+	height: 50vh;
+	display: flex;
+	align-items: center;
+}
+
+.section-copy {
+	display: none;
+}
+
+.section-copy h2:after {
+	display: block;
+	height: 2px;
+	background-color: #00bc8c;
+	content: "";
+	width: 60px;
+	margin: 0 auto;
+	margin-top: 20px;
+	transition: all 0.5s ease-in-out 0s;
+}
+
+@media (max-width: 1024px) {
+	.section-main {
+		height: auto;
+	}
+}
