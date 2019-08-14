@@ -172,15 +172,12 @@
 				var player = embed.getPlayer();
 				player.play();
 			});
-			fetch('https://api.twitch.tv/kraken/streams?client_id=ooln3u3mzf2t2n5ksx2v04x1jmiqj6&channel=454382405')
-				.then(res => res.json())
-				.then((data) => {
-					if (data.streams && data.streams.length > 0) {
-						$('.sub-embed').show();
-						$('.sub-offline').hide();
-					}
-				})
-				.catch(err => { throw err });
+			$.getJSON('https://api.twitch.tv/kraken/streams?client_id=ooln3u3mzf2t2n5ksx2v04x1jmiqj6&channel=454382405&callback=?', function (data) {
+				if (data.streams && data.streams.length > 0) {
+					$('.sub-embed').show();
+					$('.sub-offline').hide();
+				}
+			});
 		</script>
 	</body>
 
